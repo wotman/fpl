@@ -475,12 +475,6 @@ class ParseResult:
         if res.error: self.error = res.error
         return res.node
 
-    def try_register(self,res):
-        if res.error:
-            self.to_reverse_count = res.advance_count
-            return None
-        return self.register(res)
-
     def success(self, node):
         self.node = node
         return self
